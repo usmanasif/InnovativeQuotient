@@ -6,6 +6,9 @@ class User < ApplicationRecord
        
   validates_presence_of :email, :password, :first_name, :last_name, :username
 
+  has_many :businesses, dependent: :destroy
+  
+
   def remember_me
 		(super == nil) ? '1' : super
 	end
