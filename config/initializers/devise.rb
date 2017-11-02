@@ -274,6 +274,6 @@ Devise.setup do |config|
 
   require 'omniauth-linkedin'
   config.omniauth :linkedin, "81m7pci7beyxdo", "kJPz9jV0z6OFlodL"
-
+  config.secret_key = 'd51485b5a13c1d9beef40edd2d31e740681849bf9ce774187f23df5ccdfaa1e0fefd0710ca9683386cdafef506f5119d47245b137e6878fbd6047266ea62afd5'
 
 end
