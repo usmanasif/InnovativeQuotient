@@ -3,7 +3,6 @@ venv
 *.pyc
 staticfiles
 tmp/*
-log/*
 code_optimization/*
 .idea/*
 CodeFormatter/*
@@ -25,7 +24,8 @@ future_code.txt
 temp-code.txt
 
 # Ignore all logfiles and tempfiles.
-/log/*.log
+log/*.log
+
 /tmp
 
 test.pdf

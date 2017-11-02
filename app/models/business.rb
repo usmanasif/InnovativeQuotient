@@ -1,9 +1,9 @@
 class Business < ApplicationRecord
 
 	belongs_to :user
-	has_one :type
-	has_one	:category
-	has_one :ownership_type
-	has_one :industry
+	belongs_to :type
+	belongs_to :category
+	belongs_to :ownership_type
+	belongs_to :industry
 
 end
