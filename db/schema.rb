@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171101154459) do
+ActiveRecord::Schema.define(version: 20171102070115) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,51 +23,51 @@ ActiveRecord::Schema.define(version: 20171101154459) do
     t.string   "sector"
     t.string   "SIC"
     t.string   "NAICS"
-    t.boolean  "franchise",     default: false
+    t.boolean  "franchise",         default: false
     t.string   "model"
-    t.boolean  "startup",       default: false
+    t.boolean  "startup",           default: false
     t.string   "registered"
     t.text     "plan"
-    t.string   "loan",          default: "0"
+    t.string   "loan",              default: "0"
     t.string   "legal_council"
     t.string   "accounting"
     t.integer  "user_id"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.integer  "category_id"
+    t.integer  "industry_id"
+    t.integer  "ownership_type_id"
+    t.integer  "type_id"
+    t.index ["category_id"], name: "index_businesses_on_category_id", using: :btree
+    t.index ["industry_id"], name: "index_businesses_on_industry_id", using: :btree
     t.index ["name"], name: "index_businesses_on_name", using: :btree
+    t.index ["ownership_type_id"], name: "index_businesses_on_ownership_type_id", using: :btree
+    t.index ["type_id"], name: "index_businesses_on_type_id", using: :btree
     t.index ["user_id"], name: "index_businesses_on_user_id", using: :btree
   end
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
-    t.integer  "business_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["business_id"], name: "index_categories_on_business_id", using: :btree
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "industries", force: :cascade do |t|
     t.string   "name"
-    t.integer  "business_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["business_id"], name: "index_industries_on_business_id", using: :btree
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "ownership_types", force: :cascade do |t|
     t.string   "name"
-    t.integer  "business_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["business_id"], name: "index_ownership_types_on_business_id", using: :btree
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "types", force: :cascade do |t|
     t.string   "name"
-    t.integer  "business_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["business_id"], name: "index_types_on_business_id", using: :btree
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["name"], name: "index_types_on_name", using: :btree
   end
 
@@ -94,9 +94,9 @@ ActiveRecord::Schema.define(version: 20171101154459) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "businesses", "categories"
+  add_foreign_key "businesses", "industries"
+  add_foreign_key "businesses", "ownership_types"
+  add_foreign_key "businesses", "types"
   add_foreign_key "businesses", "users"
-  add_foreign_key "categories", "businesses"
-  add_foreign_key "industries", "businesses"
-  add_foreign_key "ownership_types", "businesses"
-  add_foreign_key "types", "businesses"
 end
