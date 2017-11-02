@@ -24,9 +24,7 @@ future_code.txt
 temp-code.txt
 
 # Ignore all logfiles and tempfiles.
-log/*.log
-
-/tmp
+log/*
 
 test.pdf
 test.jpg
