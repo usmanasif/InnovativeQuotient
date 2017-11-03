@@ -84,18 +84,16 @@ Use search to find needed section.
 -->
 <body class="<%= yield :body_class %>">
 
-<%unless controller.controller_name.to_s == "application" && controller.action_name.to_s == "homepage"%>
   
-  <!-- HEADER -->
-  <%= render partial: 'layouts/header' unless @lock_screen %>
-  <!-- END HEADER -->
+<!-- HEADER -->
+<%= render partial: 'layouts/header' unless @lock_screen %>
+<!-- END HEADER -->
 
-  <!-- Left panel : Navigation area -->
-  <!-- Note: This width of the aside area can be adjusted through LESS variables -->
+<!-- Left panel : Navigation area -->
+<!-- Note: This width of the aside area can be adjusted through LESS variables -->
 
-  <%= render partial: 'layouts/left_panel' if current_user && !@simulate_no_user %>
+<%= render partial: 'layouts/left_panel' if current_user && !@simulate_no_user %>
 
-<% end %>
 <!-- END NAVIGATION -->
 
 <!-- MAIN PANEL -->

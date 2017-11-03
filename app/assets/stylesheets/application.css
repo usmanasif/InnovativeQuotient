@@ -19,12 +19,6 @@
  *= require smartadmin-production
  *= require smartadmin-skins
  *= require smartadmin-rtl
- 
- 
- * require landing-page
- 
-
-
  *
  * We recommend you use "your_style.scss" to override SmartAdmin
  * specific styles this will also ensure you retrain your customization with

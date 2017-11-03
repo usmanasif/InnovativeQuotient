@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   layout "layouts/landing_page_layout", only: :homepage
-  def homepage 
+  def homepage
     render "layouts/homepage"
   end
 
