@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en-us" id="<%= yield :html_id %>">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>SmartAdmin Landing</title>
+
+	<!-- #Bootstrap Core CSS -->
+	<%= stylesheet_link_tag "landingpage/landingpage" %>
+
+	<!-- #SLIDER REVOLUTION 4.x CSS SETTINGS -->
+	<%= stylesheet_link_tag "landingpage/extralayers" %>
+	<%= stylesheet_link_tag "landingpage/settings" %>
+	<%= stylesheet_link_tag "landingpage/nivo-lightbox" %>
+	<%= stylesheet_link_tag "landingpage/animate" %>
+	<%= stylesheet_link_tag "landingpage/main" %>
+	<%= stylesheet_link_tag "landingpage/default" %>
+	<%= stylesheet_link_tag "landingpage/colors-default" %>
+	<%= stylesheet_link_tag "landingpage/nivo-lightbox" %>
+
+	<!-- #FAVICONS -->
+	<link rel="shortcut icon" href="assets/favicon/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
+
+	<!-- #GOOGLE FONT -->
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
+
+</head>
+	<body>
+
+
+		<%= yield %>
+
+
+			<!-- #FOOTER -->
+		<footer>
+			<div class="footer-content clearfix">
+				<div class="container custom-container">
+					<div class="row">
+						<div class="col-md-3 col-sm-6 col-xs-12">
+							<a href="#" class="footer-logo">About Us</a>
+							<p>
+							</p>
+							<p>
+							</p>
+							<a href="#" class="learn-more">learn more</a>
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-12">
+							<h3>Recent Tweets</h3>
+							<div class="recent-post clearfix">
+								<div class="footer-thumb-img">
+									<span class="footer-overlay-img"></span>
+								</div>
+								<p>
+									Fusce gravida tortor felis, ac dictum risus sagittis
+									<span class="date">November 15, 2014</span>
+								</p>
+
+							</div>
+							<div class="recent-post clearfix">
+								<div class="footer-thumb-img">
+									<span class="footer-overlay-img"></span>
+								</div>
+								<p>
+									Fusce gravida tortor felis, ac dictum risus sagittis
+									<span class="date">November 11, 2014</span>
+								</p>
+
+							</div>
+							<div class="recent-post clearfix">
+								<div class="footer-thumb-img">
+									<span class="footer-overlay-img"></span>
+								</div>
+								<p>
+									Fusce gravida tortor felis, ac dictum risus sagittis
+									<span class="date">November 10, 2014</span>
+								</p>
+
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-12">
+							<h3>Top Tags</h3>
+							<div class="footer-tags">
+								<ul>
+									<li>
+										<a href="#">Web Design</a>
+									</li>
+									<li>
+										<a href="#">Services</a>
+									</li>
+									<li>
+										<a href="#">Landing</a>
+									</li>
+									<li>
+										<a href="#">SmartAdmin</a>
+									</li>
+									<li>
+										<a href="#">.Net</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-12">
+							<h3>Flicker photos (recent)</h3>
+							<div class="flicker-widget">
+								<a href="#"></a>
+								<a href="#"></a>
+								<a href="#"></a>
+								<a href="#"></a>
+								<a href="#"></a>
+								<a href="#"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="bottom-footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 col-sm-12 col-xs-12 text-center">
+							<p>
+								Copyright © 2015 - Your Company Name
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- / #FOOTER -->
+
+		<!-- # Core JavaScript Files -->
+
+		<!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script>
+			if (!window.jQuery) {
+				document.write('<script src="js/libs/jquery-2.0.2.min.js"><\/script>');
+			}
+		</script>
+
+		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+		<script>
+			if (!window.jQuery.ui) {
+				document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');
+			}
+		</script>
+
+
+
+		<!--# JS PLUGINS -->
+
+		<%= javascript_include_tag "landingpage/classie" %>
+		<%= javascript_include_tag "landingpage/gnmenu" %>
+		<%= javascript_include_tag "landingpage/jquery.scrollUp" %>
+		<%= javascript_include_tag "landingpage/nivo-lightbox.min" %>
+		<%= javascript_include_tag "landingpage/smoothscroll" %>
+		<%= javascript_include_tag "landingpage/jquery.themepunch.plugins.min" %>
+		<%= javascript_include_tag "landingpage/jquery.themepunch.revolution.min" %>
+		<%= javascript_include_tag "landingpage/custom" %>
+
+
+		<!-- #PAGE SCRIPT -->
+		<script type="text/javascript">
+			jQuery(document).ready(function() {
+
+				jQuery('.tp-banner').show().revolution({
+					dottedOverlay : "none",
+					delay : 8000,
+					startwidth : 1170,
+					startheight : 700,
+					hideThumbs : 200,
+
+					thumbWidth : 100,
+					thumbHeight : 50,
+					thumbAmount : 5,
+
+					navigationType : "bullet",
+					navigationArrows : "solo",
+					navigationStyle : "preview4",
+
+					touchenabled : "on",
+					onHoverStop : "off",
+
+					swipe_velocity : 0.7,
+					swipe_min_touches : 1,
+					swipe_max_touches : 1,
+					drag_block_vertical : false,
+
+					parallax : "mouse",
+					parallaxBgFreeze : "on",
+					parallaxLevels : [7, 4, 3, 2, 5, 4, 3, 2, 1, 0],
+
+					keyboardNavigation : "off",
+
+					navigationHAlign : "center",
+					navigationVAlign : "bottom",
+					navigationHOffset : 0,
+					navigationVOffset : 20,
+
+					soloArrowLeftHalign : "left",
+					soloArrowLeftValign : "center",
+					soloArrowLeftHOffset : 20,
+					soloArrowLeftVOffset : 0,
+
+					soloArrowRightHalign : "right",
+					soloArrowRightValign : "center",
+					soloArrowRightHOffset : 20,
+					soloArrowRightVOffset : 0,
+
+					shadow : 0,
+					fullWidth : "off",
+					fullScreen : "on",
+
+					spinner : "spinner4",
+
+					stopLoop : "off",
+					stopAfterLoops : -1,
+					stopAtSlide : -1,
+
+					shuffle : "off",
+
+					autoHeight : "off",
+					forceFullWidth : "off",
+
+					hideThumbsOnMobile : "off",
+					hideNavDelayOnMobile : 1500,
+					hideBulletsOnMobile : "off",
+					hideArrowsOnMobile : "off",
+					hideThumbsUnderResolution : 0,
+
+					hideSliderAtLimit : 0,
+					hideCaptionAtLimit : 0,
+					hideAllCaptionAtLilmit : 0,
+					startWithSlide : 0,
+					fullScreenOffsetContainer : ""
+				});
+
+			});
+			//ready
+
+			$.scrollUp();
+		</script>
+		
+	</body>
+</html>

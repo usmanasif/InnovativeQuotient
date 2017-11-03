@@ -5,27 +5,30 @@
     <%= link_to 'Create account', new_user_registration_path, class: 'btn btn-danger' %>
   </span>
 <% end %>
+<%= stylesheet_link_tag "devise/login-new" %>
+
+
 <!-- MAIN CONTENT -->
 <div id="content" class="container">
 
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-7 col-lg-8 hidden-xs hidden-sm">
-      <h1 class="txt-color-red login-header-big">SmartAdmin</h1>
+      <!-- <h1 class="txt-color-red login-header-big">SmartAdmin</h1> -->
       <div class="hero">
 
-        <div class="pull-left login-desc-box-l">
+        <!-- <div class="pull-left login-desc-box-l">
           <h4 class="paragraph-header">It's Okay to be Smart. Experience the simplicity of SmartAdmin, everywhere you go!</h4>
           <div class="login-app-icons">
             <a href="javascript:void(0);" class="btn btn-danger btn-sm">Frontend Template</a>
             <a href="javascript:void(0);" class="btn btn-danger btn-sm">Find out more</a>
           </div>
-        </div>
+        </div> -->
 
-        <%= image_tag 'demo/iphoneview.png', class: 'pull-right display-image', alt: '', style: 'width:210px' %>
+        <%= image_tag 'demo/iphoneview.png', class: 'pull-right display-image', alt: '', style: 'width:210px; margin-top:10px' %>
 
       </div>
 
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
           <h5 class="about-heading">About SmartAdmin - Are you up to date?</h5>
           <p>
@@ -38,7 +41,7 @@
             Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi voluptatem accusantium!
           </p>
         </div>
-      </div>
+      </div> -->
 
     </div>
     <div class="col-xs-12 col-sm-12 col-md-5 col-lg-4">
@@ -47,6 +50,17 @@
           <header>
             Sign In
           </header>
+
+          <fieldset>
+            <div class="row">
+              <section class="col col-6">
+                <a href="#" title="Facebook" class="btn btn-google btn-sm"><i class="fa fa-google fa-fw"></i> login with Google+</a>
+             </section>
+              <section class="col col-6">
+                <a href="<%=user_linkedin_omniauth_authorize_path%>" title="Facebook" class="btn btn-facebook btn-sm"><i class="fa fa-linkedin fa-fw"></i> login with LinkedInn</a>
+              </section>
+            </div>
+          </fieldset>
 
           <fieldset>
 
@@ -142,3 +156,5 @@
     });
   </script>
 <% end %>
+
+

@@ -11,6 +11,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create(
-  email: 'admin@iq.com',
-  password: 'IQ12345'
+  email: 'admin@iq.com', password: 'IQ12345', first_name: 'admin', last_name: 'admin', username: 'admin'
 )

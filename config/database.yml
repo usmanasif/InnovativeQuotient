@@ -6,10 +6,11 @@
 #
 default: &default
   adapter: postgresql
+  host: localhost
   pool: 5
   timeout: 5000
   username: postgres
-  password:
+  password: 
 
 development:
   <<: *default
@@ -29,6 +30,6 @@ production:
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  database: smartadmon_production
-  username: smartadmin
-  password: <%= ENV['SMARTADMIN_DATABASE_PASSWORD'] %>
+  database: iq_production
+  username: postgres
+  password: postgres12345

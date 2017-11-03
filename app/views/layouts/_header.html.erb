@@ -2,7 +2,9 @@
   <div id="logo-group">
 
     <!-- PLACE YOUR LOGO HERE -->
-    <span id="logo"> <%= image_tag 'logo.png', alt: 'SmartAdmin' %> </span>
+    
+    <span id="logo"> <a href="<%=dashboard_path%>" > <%= image_tag 'logo.png', alt: 'SmartAdmin' %></a> </span>
+    
     <!-- END LOGO PLACEHOLDER -->
 
     <% if current_user && !@simulate_no_user %>
@@ -81,6 +83,8 @@
     </div>
     <!-- end projects dropdown -->
 
+
+
     <!-- pulled right: nav area -->
     <div class="pull-right">
 
@@ -88,6 +92,7 @@
       <div id="hide-menu" class="btn-header pull-right">
         <span> <a href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu"><i class="fa fa-reorder"></i></a> </span>
       </div>
+
       <!-- end collapse menu -->
 
       <!-- #MOBILE -->
@@ -199,8 +204,11 @@
       <%= render 'layouts/locale_select' %>
       <!-- end multiple lang -->
 
+      <div class="btn-header pull-right" style="margin-right: 10px;">
+        <span> <a href="<%=app_views_profile_path%>" >My Profile</a> </span>
+      </div>
+
     </div>
     <!-- end pulled right: nav area -->
   <% end %>
-
 </header>

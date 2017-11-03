@@ -21,3 +21,7 @@ Rails.application.config.assets.precompile +=
 Rails.application.config.assets.precompile +=
   %w(plugin/flot/jquery.flot.tooltip.min.js)
 Rails.application.config.assets.precompile += %w( demo.js )
+
+Rails.application.config.assets.precompile += %w( devise/*.css , landingpage/*.css )
+
+Rails.application.config.assets.precompile += %w( landingpage/*.js )

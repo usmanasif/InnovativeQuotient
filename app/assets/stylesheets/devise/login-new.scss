@@ -1,0 +1,24 @@
+.btn-facebook {
+    background: #007bb6;
+    border-radius: 6px;
+    color: #fff;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #007bb6; 
+  }
+  .btn-google {
+    background: #ff0000;
+    border-radius: 6px;
+    color: #fff;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ff0000; 
+  }
+  
+  .btn-facebook:link, .btn-facebook:visited {
+    color: #fff;
+  }
+  .btn-facebook:active, .btn-facebook:hover {
+    background: #263961;
+    color: #fff;
+  }

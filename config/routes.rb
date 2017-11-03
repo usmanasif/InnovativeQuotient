@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { omniauth_callbacks: "omniauth_callbacks" }
+  devise_for :users, :controllers => { omniauth_callbacks: "omniauth_callbacks", sessions: "users/sessions" }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
+  root 'application#homepage'
 
-  root  'dashboard#analytics'
+  get  'dashboard' , to: "dashboard#analytics"
 
   get 'dashboards/dashboard-social',
       to: 'dashboard#social',
@@ -135,7 +136,7 @@ Rails.application.routes.draw do
   get 'app_views/forum_layout_post_view',
       to: 'app_views#forum_layout_post_view',
       as: :app_views_forum_layout_post_view
-  get 'app_views/profile', to: 'app_views#profile', as: :app_views_profile
+  get 'profile', to: 'app_views#profile', as: :app_views_profile
   get 'app_views/timeline', to: 'app_views#timeline', as: :app_views_timeline
   get 'app_views/search_page',
       to: 'app_views#search_page',
