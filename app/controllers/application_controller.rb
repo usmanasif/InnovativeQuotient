@@ -7,7 +7,11 @@ class ApplicationController < ActionController::Base
 
   layout "layouts/landing_page_layout", only: :homepage
   def homepage
-    render "layouts/homepage"
+    unless current_user.present?
+      render "layouts/homepage" 
+    else
+      redirect_to dashboard_path
+    end
   end
 
   protected
