@@ -33,6 +33,8 @@
   </span>
 <% end %>
  -->
+ <%= stylesheet_link_tag "devise/login-new" %>
+
 <% content_for :html_id, "extr-page" %>
 <!-- MAIN CONTENT -->
 <div id="content" class="container">
@@ -73,11 +75,18 @@
     <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
       <div class="well no-padding">
 
-        <button class="btn", style="margin-left: 70px; margin-top: 20px; background-color: #007BB6;">Log in with Linked<i class="fa fa-linkedin"></i></button>
-        <button class="btn", style="margin-left: 50px; margin-top: 20px;background-color: #F4731C;">Log in with <i class="fa fa-google-plus"></i></button>
-
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'smart-form client-form'}) do |f| %>
           <%= devise_error_messages! %>
+            <fieldset>
+              <div class="row">
+                <section class="col col-6">
+                  <a href="#" title="Facebook" class="btn btn-google btn-sm"><i class="fa fa-google fa-fw"></i> login with Google+</a>
+               </section>
+                <section class="col col-6">
+                  <a href="<%=user_linkedin_omniauth_authorize_path%>" title="Facebook" class="btn btn-facebook btn-sm"><i class="fa fa-linkedin fa-fw"></i> login with LinkedInn</a>
+                </section>
+              </div>
+            </fieldset>
           <fieldset>
             <section>
               <label class="input"> <i class="icon-append fa fa-user"></i>

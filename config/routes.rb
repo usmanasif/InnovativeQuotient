@@ -10,6 +10,10 @@ Rails.application.routes.draw do
 
   root 'application#homepage'
 
+  authenticated :user do
+    root 'dashboard#analytics', as: :authenticated_root
+  end
+
   get  'dashboard' , to: "dashboard#analytics"
 
   get 'dashboards/dashboard-social',

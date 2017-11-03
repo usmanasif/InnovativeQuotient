@@ -5,8 +5,13 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   protect_from_forgery with: :exception
 
+  layout "layouts/landing_page_layout", only: :homepage
   def homepage
-    render "layouts/homepage"
+    unless current_user.present?
+      render "layouts/homepage" 
+    else
+      redirect_to dashboard_path
+    end
   end
 
   protected
