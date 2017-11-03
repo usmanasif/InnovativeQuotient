@@ -3,11 +3,11 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
-       
-  validates_presence_of :email, :password, :first_name, :last_name, :username
+
+  validates_presence_of :email, :first_name, :last_name, :username
 
   has_many :businesses, dependent: :destroy
-  
+
 
   def remember_me
 		(super == nil) ? '1' : super

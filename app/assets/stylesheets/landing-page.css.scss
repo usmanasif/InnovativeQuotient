@@ -1,35 +1,35 @@
 @font-face {
   font-family:'open_sansbold';
-  src: url('../fonts/opensans-bold-webfont.woff2') format("woff2"), 
-  url('../fonts/opensans-bold-webfont.woff') format("woff");
+  src: font-url('opensans-bold-webfont.woff2') format("woff2"),
+  font-url('opensans-bold-webfont.woff') format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family:'open_sansextrabold';
-  src: url('../fonts/opensans-extrabold-webfont.woff2') format("woff"),
-   url('../fonts/opensans-extrabold-webfont.woff') format("woff");
+  src: font-url('opensans-extrabold-webfont.woff2') format("woff"),
+   font-url('opensans-extrabold-webfont.woff') format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family:'open_sanslight';
-  src: url('../fonts/opensans-light-webfont.woff2') format("woff2"), 
-  url('../fonts/opensans-light-webfont.woff') format("woff");
+  src: font-url('opensans-light-webfont.woff2') format("woff2"),
+  font-url('opensans-light-webfont.woff') format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family:'open_sansregular';
-  src: url('../fonts/opensans-regular-webfont.woff2') format("woff2"), 
-  url('../fonts/opensans-regular-webfont.woff') format("woff");
+  src: font-url('opensans-regular-webfont.woff2') format("woff2"),
+  font-url('opensans-regular-webfont.woff') format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family:'open_sanssemibold';
-  src: url('../fonts/opensans-semibold-webfont.woff2') format("woff2"), 
-  url('../fonts/opensans-semibold-webfont.woff') format("woff");
+  src: font-url('opensans-semibold-webfont.woff2') format("woff2"),
+  font-url('opensans-semibold-webfont.woff') format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -41,8 +41,8 @@ b, u, i,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
   margin: 0;
@@ -53,7 +53,7 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
@@ -125,7 +125,7 @@ table {
 .social-netswork li {
   display: block;
   text-align: center;
-  background: #fff; 
+  background: #fff;
 }
 .social-netswork li a {
   color: #fff;
@@ -152,25 +152,25 @@ table {
   margin: 0 0 2px;
 }
 .social-netswork li.facebook {
-  background: #3b589e; 
+  background: #3b589e;
 }
 .social-netswork li.linkedin {
-  background: #007cbb; 
+  background: #007cbb;
 }
 .social-netswork li.pinterest {
-  background: #c82321; 
+  background: #c82321;
 }
 .social-netswork li.email {
-  background: #ababab; 
+  background: #ababab;
 }
 .social-netswork li.gplus {
-  background: #e54839; 
+  background: #e54839;
 }
 .social-netswork li.twitter {
-  background: #07a8f0; 
+  background: #07a8f0;
 }
 .social-netswork li.twitter2 {
-  background: #0f54b3; 
+  background: #0f54b3;
 }
 .banner2 .banner-holder {
   font-size: 14px;
@@ -198,7 +198,7 @@ table {
   background: none;
   padding: 0;
   border: none;
-} 
+}
 .banner2 .banner-search-form  .input-group {
   display: inline-table;
   vertical-align: middle;
@@ -225,7 +225,7 @@ table {
   background-image: none;
   border: none;
 }
-.navarea1 { 
+.navarea1 {
   font: 13px/19px 'open_sansregular';
   padding: 10px 0 0;
   float: right;
@@ -319,7 +319,7 @@ table {
   line-height: 75px;
   position: relative;
 }
-.clients-list li .client_wrapper, 
+.clients-list li .client_wrapper,
 .clients-list li .client_wrapper img {
   -webkit-transition: all .4s ease-in-out;
   -moz-transition: all .4s ease-in-out;
@@ -342,7 +342,7 @@ table {
 }
 
 @media (min-width: 768px) {
-  .banner .form-inline .input-group .input-group-addon, 
+  .banner .form-inline .input-group .input-group-addon,
   .banner .form-inline .input-group .input-group-btn {
     width: 17%;
   }
@@ -406,14 +406,14 @@ table {
   }
 }
 
-@media (max-width: 1180px) { 
+@media (max-width: 1180px) {
   .banner {
     padding: 140px 0 83px;
   }
 }
 
 @media(max-width: 767px) {
-  .clients-list li { 
+  .clients-list li {
     width: 32.666%;
   }
   .navarea1 .navbar-default .navbar-nav > li > a {
@@ -480,7 +480,7 @@ table {
     padding: 24px 0;
     float: left;
     width: 100%;
-  } 
+  }
   .banner2 .banner-holder {
     overflow: visible;
     width: 100%;
@@ -511,15 +511,15 @@ table {
   .social-netswork {
     top: 20%;
   }
- 
+
 }
-@media(max-width: 567px) { 
+@media(max-width: 567px) {
   .clients-list li {
     width: 49%;
   }
-}  
-@media(max-width: 400px) { 
+}
+@media(max-width: 400px) {
   .clients-list li {
     width: 100%;
   }
-}  
+}

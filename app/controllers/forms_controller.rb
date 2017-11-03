@@ -1,5 +1,13 @@
 # Forms section
 class FormsController < ApplicationController
+
+  def new
+    @business = Business.new
+  end
+
+  def create
+  end
+
   def smart_form_elements
   end
 

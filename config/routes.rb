@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { omniauth_callbacks: "omniauth_callbacks", sessions: "users/sessions" }
+  # get 'businesses/new'
+
+  # get 'businesses/edit'
+
+  resources :businesses
+
+  devise_for :users, :controllers => { omniauth_callbacks: "omniauth_callbacks", sessions: "users/sessions", registrations: "users/registrations" }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root 'application#homepage'
@@ -58,6 +64,9 @@ Rails.application.routes.draw do
   get 'tables/jquery_grid', to: 'tables#jquery_grid', as: :tables_jquery_grid
 
   # Forms
+
+  # get 'forms/new', to: 'forms#new'
+
   get 'forms/smart_form_elements',
       to: 'forms#smart_form_elements',
       as: :forms_smart_form_elements

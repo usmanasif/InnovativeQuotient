@@ -1,0 +1,408 @@
+<%=  form_for(@business) do |f| %>
+   <div class="col-sm-4">
+      <div class="jarviswidget">
+          <div class="widget-body">
+            <!-- <form id="movieForm" method="post"> -->
+              <fieldset>
+                <legend>
+                  Do you need help with...
+                </legend>
+                <div class="form-group">
+                  <div class="row">
+
+                    <div class="col-sm-12 col-md-10">
+
+                      <label class="radio radio-inline no-margin">
+                        <!-- <input type="radio" name="rating" value="New business" class="radiobox style-2" /> -->
+                        <%= f.radio_button :startup, true %>
+                        <span>New business launch</span> </label>
+
+                      <label class="radio radio-inline">
+                        <!-- <input type="radio" name="rating" value="Existing business" class="radiobox style-2" /> -->
+                        <%= f.radio_button :startup, false %>
+                        <span>Expand Existing business</span> </label>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            <!-- </form> -->
+          </div>
+      </div>
+          <div class="jarviswidget">
+              <div class="widget-body">
+                  <fieldset>
+                    <legend>
+                      Business plan?
+                    </legend>
+                    <div class="form-group">
+                      <div class="row">
+
+                        <div class="col-sm-12 col-md-10">
+                          <label class="radio radio-inline no-margin">
+                          <%= f.radio_button :plan, true %>
+                            <span>Yes</span> </label>
+                          <label class="radio radio-inline">
+                          <%= f.radio_button :plan, false %>
+                            <span>No</span> </label>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                <!-- </form> -->
+              </div>
+
+          </div>
+          <!-- end widget -->
+          <div class="jarviswidget">
+              <div class="widget-body">
+                  <fieldset>
+                    <legend>
+                      Business loan?
+                    </legend>
+                    <div class="form-group">
+                      <div class="row">
+
+                        <div class="col-sm-12 col-md-10">
+                          <label class="radio radio-inline no-margin">
+                          <%= f.radio_button :loan, true %>
+                            <span>Yes</span> </label>
+                          <label class="radio radio-inline">
+                          <%= f.radio_button :loan, false %>
+                            <span>No</span> </label>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                <!-- </form> -->
+              </div>
+
+          </div>
+
+          <div class="jarviswidget" >
+              <div class="widget-body">
+                  <fieldset>
+                    <legend>
+                      Legal Counsel?
+                    </legend>
+                    <div class="form-group">
+                      <div class="row">
+                        <div class="col-sm-12 col-md-10">
+                          <label class="radio radio-inline no-margin">
+                            <%= f.radio_button :legal_council, true %>
+                            <span>Yes</span> </label>
+
+                          <label class="radio radio-inline">
+                          <%= f.radio_button :legal_council, false %>
+                            <!-- <input type="radio" name="legal_counsel" value="watchable" class="radiobox style-2" /> -->
+                            <span>No</span> </label>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+              </div>
+          </div>
+          <div class="jarviswidget" >
+              <div class="widget-body">
+                  <fieldset>
+                    <legend>
+                      Accounting?
+                    </legend>
+                    <div class="form-group">
+                      <div class="row">
+
+                        <div class="col-sm-12 col-md-10">
+
+                          <label class="radio radio-inline no-margin">
+                          <%= f.radio_button :accounting, true %>
+                            <!-- <input type="radio" name="legal_counsel" value="terrible" class="radiobox style-2" /> -->
+                            <span>Yes</span> </label>
+
+                          <label class="radio radio-inline">
+                          <%= f.radio_button :accounting, false %>
+                            <!-- <input type="radio" name="legal_counsel" value="watchable" class="radiobox style-2" /> -->
+                            <span>No</span> </label>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+              </div>
+          </div>
+
+          <div class="jarviswidget" >
+              <div class="widget-body">
+                <fieldset>
+                  <legend>
+                    Business Category
+                  </legend>
+                <fieldset>
+                    <div class="form-group">
+                      <div class="col-lg-5">
+                        <% if !@categories.nil? %>
+                          <% if @categories.any? %>
+                              <%= collection_check_boxes(:business, :category_ids, @categories, :id, :name ) %>
+                          <% end %>
+                      <% end %>
+                      </div>
+                    </div>
+                  </fieldset>
+              </div>
+          </div>
+        </div>
+
+        <div class="col-sm-8">
+
+          <!-- Widget ID (each widget will need unique ID)-->
+          <div class="jarviswidget" id="wid-id-3" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-deletebutton="false" data-widget-sortable="false">
+
+              <div class="widget-body">
+
+                <!-- <form id="productForm" class="form-horizontal"> -->
+
+                  <fieldset>
+                    <legend>
+                      Business Information
+                    </legend>
+                  </fieldset>
+                  <fieldset>
+                    <!-- <div class="row"> -->
+                    <!-- <div class="form-group"> -->
+                      <div class="col-xs-9 col-lg-3 selectContainer">
+                        <!-- <select class="form-control" name="color" style="margin-left: 20px">
+                          <option value="">Consumer</option>
+                          <option value="blue">Blue</option>
+                          <option value="green">Green</option>
+                          <option value="red">Red</option>
+                          <option value="yellow">Yellow</option>
+                          <option value="white">White</option>
+                        </select> -->
+                        <%= f.select :type, options_for_select(%w[Consumer]), {}, {class: "form-control"} %>
+                      </div>
+                      <%= f.fields_for @classes do |builder| %>
+                      <div class="row">
+                        <div class="col-xs-9 col-lg-2 selectContainer">
+                          <%= builder.select :state, options_for_select(%w[CO]), {}, {class: "form-control"} %>
+                        </div>
+                        <div class="col-xs-9 col-lg-2 selectContainer">
+                          <%= builder.select :state, options_for_select(%w[denver]), {}, {class: "form-control"} %>
+                        </div>
+                        <div class="col-xs-9 col-lg-2 selectContainer">
+                          <%= builder.select :state, options_for_select(%w[80005]), {}, {class: "form-control"} %>
+                        </div>
+                      </div>
+                      <div class="row" style="margin-left: 250px">
+                        <div class="col-xs-9 col-lg-2 selectContainer">
+                          <%= builder.select :state, options_for_select(%w[CO]), {}, {class: "form-control"} %>
+                        </div>
+                        <div class="col-xs-9 col-lg-2 selectContainer">
+                          <%= builder.select :state, options_for_select(%w[denver]), {}, {class: "form-control"} %>
+                        </div>
+                        <div class="col-xs-9 col-lg-2 selectContainer">
+                          <%= builder.select :state, options_for_select(%w[80005]), {}, {class: "form-control"} %>
+                        </div>
+                      </div>
+                      <%end %>
+
+
+                      <!-- <div class="col-xs-9 col-lg-2 selectContainer">
+                        <select class="form-control" name="size">
+                          <option value="">Co</option>
+                          <option value="S">S</option>
+                          <option value="M">M</option>
+                          <option value="L">L</option>
+                          <option value="XL">XL</option>
+                        </select>
+                      </div>
+
+                      <div class="col-xs-9 col-lg-2 selectContainer">
+                        <select class="form-control" name="size">
+                          <option value="">Denver</option>
+                          <option value="S">S</option>
+                          <option value="M">M</option>
+                          <option value="L">L</option>
+                          <option value="XL">XL</option>
+                        </select>
+                      </div>
+
+                      <div class="col-xs-9 col-lg-2 selectContainer">
+                        <select class="form-control" name="size">
+                          <option value="">80005</option>
+                          <option value="S">S</option>
+                          <option value="M">M</option>
+                          <option value="L">L</option>
+                          <option value="XL">XL</option>
+                        </select>
+                      </div> -->
+
+                      <!-- </div> -->
+                      <!-- <div class="row" style="margin-left: 300px"> -->
+<!--
+                      <div class="col-xs-9 col-lg-2 selectContainer">
+                        <select class="form-control" name="size">
+                          <option value="">Co</option>
+                          <option value="S">S</option>
+                          <option value="M">M</option>
+                          <option value="L">L</option>
+                          <option value="XL">XL</option>
+                        </select>
+                      </div>
+
+                      <div class="col-xs-9 col-lg-2 selectContainer">
+                        <select class="form-control" name="size">
+                          <option value="">Denver</option>
+                          <option value="S">S</option>
+                          <option value="M">M</option>
+                          <option value="L">L</option>
+                          <option value="XL">XL</option>
+                        </select>
+                      </div>
+
+                      <div class="col-xs-9 col-lg-2 selectContainer">
+                        <select class="form-control" name="size">
+                          <option value="">80005</option>
+                          <option value="S">S</option>
+                          <option value="M">M</option>
+                          <option value="L">L</option>
+                          <option value="XL">XL</option>
+                        </select>
+                      </div>
+                       -->
+                      <!-- </div> -->
+                    <!-- </div> -->
+                  </fieldset>
+                <!-- </form> -->
+
+                  <fieldset>
+                    <div class="form-group">
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <div>
+                            <div class="row">
+                             <label>Business Name</label>
+                            <!-- <input type="text" /><br><br> -->
+                              <%= f.text_field :name %>
+                            </div>
+                          <label class="col-md-3 control-label">Have you previously registered this business</label>
+                          <label class="radio radio-inline no-margin">
+                            <!-- <input type="radio" name="rating" value="terrible" class="radiobox style-2" /> -->
+                          <%= f.radio_button :registered, true %>
+
+                            <span>Yes</span></label>
+                          <label class="radio radio-inline">
+                            <!-- <input type="radio" name="rating" value="watchable" class="radiobox style-2" /> -->
+                          <%= f.radio_button :registered, false %>
+                            <span>No</span> </label>
+
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="row">
+                          <label>Licenses and Registrations</label>
+                        </div>
+                        <div class="row">
+                          <strong style="font-size: 15px">Federal</strong>
+                          <p>None</p><br>
+                        </div>
+                        <div class="row">
+                          <strong style="font-size: 15px">State</strong>
+                          <p>None</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  </fieldset>
+
+              </div>
+              <!-- end widget content -->
+
+            </div>
+            <!-- end widget div -->
+
+          </div>
+          <!-- end widget -->
+
+          <div class="col-sm-3">
+          <div class="jarviswidget">
+              <div class="widget-body">
+                  <fieldset>
+                    <legend>
+                      Business Domain
+                    </legend>
+                    <div class="form-group">
+                      <label>Industry</label>
+                        <%= f.select :industry, options_for_select(%w[Retail]), {}, {class: "form-control"} %>
+                    </div>
+                    <div class="form-group">
+                      <label>Sector</label>
+                        <%= f.select :sector, options_for_select(%w[FoodandKindredProducts]), {}, {class: "form-control"} %>
+
+                    </div>
+                    <div class="form-group">
+                      <label>SICS</label>
+                       <!--  <select class="form-control" name="size">
+                          <option value="">2099- Food Preparations, Nc</option>
+                          <option value="S">S</option>
+                          <option value="M">M</option>
+                          <option value="L">L</option>
+                          <option value="XL">XL</option>
+                        </select> -->
+                        <%= f.select :SIC, options_for_select(%w[2099-Food-Preparations,Nc]), {}, {class: "form-control"} %>
+
+                    </div>
+                    <div class="form-group">
+                      <label>NAICS</label>
+                        <!-- <select class="form-control" name="size">
+                          <option value="">311712- Fresh and Frozen Sets</option>
+                          <option value="S">S</option>
+                          <option value="M">M</option>
+                          <option value="L">L</option>
+                          <option value="XL">XL</option>
+                        </select> -->
+                        <%= f.select :NAICS, options_for_select(%w[311712-FreshandFrozenSets]), {}, {class: "form-control"} %>
+                    </div>
+                    <div class="form-group">
+                      <label>Business model</label>
+                        <!-- <select class="form-control" name="size">
+                          <option value="">Business to Consumer(B2C)</option>
+                          <option value="S">S</option>
+                          <option value="M">M</option>
+                          <option value="L">L</option>
+                          <option value="XL">XL</option>
+                        </select> -->
+                        <%= f.select :model, options_for_select(%w[Business-to-Consumer(B2C)]), {}, {class: "form-control"} %>
+                    </div>
+                    <div class="form-group">
+                      <label>Franchise</label>
+                        <!-- <select class="form-control" name="size">
+                          <option value=""></option>
+                          <option value="S">S</option>
+                          <option value="M">M</option>
+                          <option value="L">L</option>
+                          <option value="XL">XL</option>
+                        </select> -->
+                        <%= f.select :model, options_for_select(%w[abc ]), {}, {class: "form-control"} %>
+
+                    </div>
+                    <div class="form-group">
+                      <label>Ownership</label>
+                        <!-- <select class="form-control" name="size">
+                          <option value="">Partnership</option>
+                          <option value="S">S</option>
+                          <option value="M">M</option>
+                          <option value="L">L</option>
+                          <option value="XL">XL</option>
+                        </select> -->
+                        <%= f.select :model, options_for_select(%w[Partnership ]), {}, {class: "form-control"} %>
+
+                    </div>
+                  </fieldset>
+                </form>
+
+              </div>
+              <!-- end widget content -->
+
+            </div>
+
+        </div>
+
+
+<% end%>

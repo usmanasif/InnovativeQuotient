@@ -18,9 +18,26 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    puts "-----------------------"
+    puts "-----------------------"
+    # puts controller.request.format
+    puts "-----------------------"
+    puts "-----------------------"
+    # super
+    @user = current_user
+    respond_to do |format|
+      if @user.update(user_params)
+        format.html { redirect_to(@user, :notice => 'User was successfully updated.') }
+        format.json { respond_with_bip(@user) }
+        format.js { redirect_to(@user, :alert => 'User was successfully updated.') }
+      else
+        format.html { render :action => "edit" }
+        format.json { respond_with_bip(@user) }
+        format.js { redirect_to(@user, :alert => 'User was successfully updated.') }
+      end
+    end
+  end
 
   # DELETE /resource
   # def destroy
@@ -57,4 +74,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:first_name,:last_name,:city,:state,:phone_number)
+  end
 end

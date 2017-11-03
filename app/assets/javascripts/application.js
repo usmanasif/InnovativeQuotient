@@ -140,3 +140,8 @@
 //= require plugin/moment/moment
 //= require plugin/chartjs/chart
 //= require plugin/fullcalendar/jquery.fullcalendar
+
+
+//  best in place
+//= require jquery
+//= require best_in_place
